@@ -1,0 +1,44 @@
+<div class="d-flex h-100">
+    <mat-card style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" [class.w-25]="largeScreen" class="my-auto mx-md-auto mx-2 p-4">
+        <mat-card-header>
+            <mat-card-title>
+                <!-- <h2 [ngClass]="{'custom-input': isDarkTheme, 'normal-input': !isDarkTheme}" class="h2 text-center">
+                    <em>Project Scheduler</em></h2> -->
+            </mat-card-title>
+            <div style="margin-right: 16px;" class="w-100 text-center">
+                <img src="assets/images/logo1.png" style="height: 3.5rem;" class="img d-inline-block img-fluid my-2 mx-3" alt="" srcset="">
+            </div>
+        </mat-card-header>
+        <p style="text-align: center; margin-right: 6rem;">
+            <mat-icon class="icon">lock</mat-icon><br>
+        </p>
+        <p class="text-center text-sm">
+            <strong class="text-center mx-auto h5"> <mark>LogIn</mark> </strong><br>
+            <span class="lead">Login to track problems/crimes against Animals.</span>
+        </p>
+        <!-- <img class="img img-fluid mx-auto d-block" style="max-width: 8rem; max-height: 8rem;" src="assets/images/cdgi-logo.png" alt="CDGI Logo"> -->
+        <mat-card-content>
+            <form [formGroup]="user" class="p-md-2 p-1" (ngSubmit)="submit()">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- <h1 class="h5 text-danger text-center">Forgot Your Credentials?</h1> -->
+                        <mat-form-field appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input matInput formControlName="username" autocomplete="off">
+                            <mat-hint align="end"></mat-hint>
+                            <!-- <mat-error *ngIf="TmId.errors?.required">Faculty TmId is <strong>required</strong></mat-error> -->
+                        </mat-form-field><br>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" formControlName="password" matInput autocomplete="off">
+                            <mat-hint align="end"></mat-hint>
+                            <!-- <mat-error *ngIf="TmId.errors?.required">Faculty TmId is <strong>required</strong></mat-error> -->
+                        </mat-form-field><br>
+                        <button (click)="report()" class="float-left" mat-raised-button>Report a Problem</button>
+                        <button mat-raised-button class="float-right" color="primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,27 @@
+<mat-card class="example-card my-3 mx-2">
+    <mat-card-header>
+        <div mat-card-avatar style="background-image: url('assets/images/danger.jpg'); background-size: cover;"
+            class="d-flex">
+            <!-- <mat-icon  class="my-auto mx-auto">error</mat-icon> -->
+        </div>
+        <mat-card-title>{{ report.name }}</mat-card-title>
+        <mat-card-subtitle>{{ report.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <img *ngIf="showImage" mat-card-image src="{{ report.filePath }}" alt="Photo of a Shiba Inu">
+    <!-- <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+    </agm-map> -->
+    <iframe *ngIf="!showImage" width="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=22.6891379,75.86477649999999&amp;key=AIzaSyCkwZpd37weme-yXwJLbe_sS9n9r-Gmx40"></iframe>
+    <mat-card-content>
+        <h4 class="h4"><strong>Latitude: </strong><span class="lead">{{ report.latitude }}</span></h4>
+        <h4 class="h4"><strong>Longitude: </strong><span class="lead">{{ report.longitude }}</span></h4>
+        <h4 class="h4 mb-0"><strong>Message: </strong></h4>
+        <p class="lead mt-1">
+            {{ report.message }}
+        </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button *ngIf="showImage" mat-raised-button (click)="showMap()">Show Map</button>
+        <button *ngIf="!showImage" mat-raised-button (click)="showImg()">Show Image</button>
+        <button mat-raised-button color="primary" (click)="markAsDone(report.id)">Mark as Done</button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,7 @@
+<app-header></app-header>
+<div style="margin-top: 60px;" *ngIf="!loggedIn" [class.largeSize]="lgSize" [class.xlSize]="xlSize" [class.smallSize]="!lgSize && !xlSize">
+    <router-outlet></router-outlet>
+</div>
+<div style="margin-top: 60px;" *ngIf="loggedIn" [class.largeSize]="lgSize" [class.xlSize]="xlSize" [class.smallSize]="!lgSize && !xlSize">
+    <app-already-loggedin></app-already-loggedin>
+</div>

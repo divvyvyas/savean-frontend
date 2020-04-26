@@ -1,0 +1,32 @@
+<div style="position: fixed;" class="sticky-top w-100">
+    <mat-toolbar style="box-shadow: 0 8px 8px -2px rgba(0,0,0,.2);" color="primary" class="navbar">
+        <div class="d-flex">
+            <a (click)="navigate()">
+                <img src="assets/images/logo.png" style="height: 3rem;" class="img d-inline-block img-fluid my-2 mx-3" alt="" srcset="">
+                <!-- <h2 style="font-family: Brush Script MT; font-size: 2.8rem;">SaveAn</h2> -->
+            </a>
+        </div>
+        <div *ngIf="loggedIn" class="my-auto">
+            <a disableRipple mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </a>
+            <mat-menu #menu="matMenu">
+                <button *ngIf="router.url != '/savean/home'" style="outline: none;" mat-menu-item (click)="navigate()">
+                    <mat-icon>home</mat-icon><span>Home</span>
+                </button>
+                <button *ngIf="router.url != '/savean/home/change-password'" style="outline: none;" mat-menu-item (click)="changePassword()">
+                    <mat-icon>lock</mat-icon><span>Change Password</span>
+                </button>
+                <button style="outline: none;" mat-menu-item (click)="logout()">
+                    <mat-icon>power_settings_new</mat-icon><span>Logout</span>
+                </button>
+            </mat-menu>
+            <!-- <a *ngIf="loggedIn" color="primary" (click)="logout()" disableRipple mat-flat-button>
+                <mat-icon>power_settings_new</mat-icon> Logout
+            </a>
+            <a *ngIf="!loggedIn" color="primary" (click)="login()" disableRipple mat-flat-button>
+                <mat-icon>power_settings_new</mat-icon> Login
+            </a> -->
+        </div>
+    </mat-toolbar>
+</div>

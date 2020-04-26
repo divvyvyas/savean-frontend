@@ -1,0 +1,34 @@
+<div class="d-flex h-100">
+    <mat-card [class.w-25]="largeScreen" class="my-auto mx-auto p-4">
+        <mat-card-header>
+            <mat-card-title>
+                
+            </mat-card-title>
+            <div style="margin-right: 16px;" class="w-100 text-center">
+                <h2 style="font-family: Brush Script MT; font-size: 2rem;" class="h2">SaveAn</h2>
+            </div>
+        </mat-card-header>
+        <p style="text-align: center; margin-right: 6rem;">
+            <mat-icon class="icon active">account_circle</mat-icon>
+        </p>
+        <mat-card-content>
+            <div class="row d-block">
+                <div class="col-12">
+                    <h4 class="h4 text-center mb-3">Are you sure you want to</h4>
+                </div>
+                <div class="col-12 text-center">
+                    <div class="col-12">
+                        <button id="username" class="dark-input" (click)="continueAs()" color="primary" mat-raised-button><strong>Continue as
+                                <em>{{localData.username}}</em></strong></button>
+                    </div>
+                    <div class="col-12 my-2">
+                        <h6 class="h6 text-center">Or</h6>
+                    </div>
+                    <div class="col-12">
+                        <button (click)="cancel()" color="warn" mat-raised-button>Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
